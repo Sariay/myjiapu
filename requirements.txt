@@ -14,7 +14,7 @@ DjangoUeditor==1.8.143
 docutils==0.16
 et-xmlfile==1.0.1
 future==0.18.2
-httplib2==0.17.4
+httplib2==0.18.0
 idna==2.9
 jdcal==1.4.1
 MarkupPy==1.14
