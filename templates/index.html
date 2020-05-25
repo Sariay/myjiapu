@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="jzh">
+<head>
+	<!-- meta -->
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- title -->
+	<title>主页-莎拉李氏</title>
+	<!-- css -->
+	<link rel="shortcut icon" href="/static/image/favicon6.ico"/>
+	<link href="/static/css/css-Cinzel.css" rel="stylesheet">
+	<link rel="stylesheet" media="all" href="/static/css/main.css">
+</head>
+<body class="page-top">
+<div id="wrapper">
+<!-- /////////////////////////////////////////////////////////////////// -->
+<div class="pageCover"></div>
+
+<header id="header" class="header">
+	<div class="header__content">
+		<div class="header__logoMenu">
+			<h1 class="header__logo"><a href="">莎拉李氏</a></h1>
+			<a href="#" class="header__menu">
+				<span class="lines">
+				<span class="line-1"></span>
+				<span class="line-2"></span>
+				<span class="line-3"></span>
+				</span>
+			</a>
+		</div>
+	</div>
+	<nav class="header__nav">
+		<div class="h-mainNav">
+			<div class="h-mainNav__inner">
+				<ul class="h-mainNav__list">
+					<li><a>壹.家国观念</a></li>
+					<li><a href="{% url 'history:migrationRoads' %}" target="_blank">貳.迁徙路线</a></li>
+					<li><a href="{% url 'history:lineageTree' %}" target="_blank">叁.世系图</a></li>
+					<li><a href="{% url 'history:gravesMap' %}" target="_blank">肆.墓葬图</a></li>
+					<li><a>伍.其他余项</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="header__link">
+			<ul>
+                {% if request.user.is_authenticated %}
+                    <li class="btn"><a href="/usercenter/" target="_blank" class="mod-btn blank">个人中心<i class="icon blank"></i></a></li>
+                    <li class="btn"><a href="{% url 'logout' %}" target="_blank" class="mod-btn blank">退出<i class="icon blank"></i></a></li>
+                    <li class="btn"><a href="/xadmin/" target="_blank" class="mod-btn blank">后台管理系统-实验版<i class="icon blank"></i></a></li>
+                {% else %}
+                    <li class="btn"><a href="{% url 'login' %}" target="_blank" class="mod-btn blank">登录<i class="icon blank"></i></a></li>
+                    <li class="btn"><a href="{% url 'signup' %}" target="_blank" class="mod-btn blank">注册<i class="icon blank"></i></a></li>
+                {% endif %}
+			</ul>
+		</div>
+	</nav>
+</header><!-- /#header -->
+
+<div id="barba-wrapper">
+<div class="barba-container" data-namespace="top">
+	<div class="page-top">
+
+
+
+	<div id="content" class="content">
+		<div class="fv">
+			<div class="fv__mainVisual">
+				<div class="fv__slide">
+					<div class="item slide01">
+						<!--<p class="mod-cap"><span>unsplash.com 提供图</span></p>-->
+						<div class="img"></div>
+					</div>
+					<div class="item slide02">
+						<!--<p class="mod-cap"><span>unsplash.com 提供图</span></p>-->
+						<div class="img"></div>
+					</div>
+					<div class="item slide03">
+						<!--<p class="mod-cap"><span>unsplash.com 提供图</span></p>-->
+						<div class="img"></div>
+					</div>
+					<div class="item slide04">
+						<p class="mod-cap"><span>unsplash.com 提供图</span></p>
+						<div class="img"></div>
+					</div>
+				</div>
+				<div class="scroll"><span class="txt">scroll</span><span class="arw"></span></div>
+			</div><!-- /.fv__mainVisual -->
+		</div><!-- /.fv -->
+		
+
+		
+			<div class="content__body">
+				<div class="content__title easingWrap">
+					<h2 class="ttl"><span class="jp">青云之志</span><span class="en">Dream</span></h2>
+				</div>
+				<section class="section section__wedding wedding easingWrap">
+					<div class="section__body">
+						<div class="section__inner">
+							<p class="wedding__txt">&nbsp;&nbsp;仲夏，清风，红袖楼，青山妩媚，料我如是。北国，京园，绿萝地，十年寒夏，不回故里。</p>
+							<p class="wedding__txt">&nbsp;&nbsp;迄今廿四年，所遇者皆良人，所求者皆吾愿，所爱者皆正义。辗转求学，栉风沐雨，砥砺歌行，或如琢如磨，或惟狂唯恐，冷暖自知矣。然人生于天地间，愈行愈勇，所赖者亲友、师长、贵人也，故毕业之际，敬谢诸恩于此。一谢祖国庇护英雄守护之恩，二谢父母生而教养之恩，三谢师长传道授业解惑之恩，四谢亲友扶助贵人勉励之恩。</p>
+							<p class="wedding__txt">&nbsp;&nbsp;行文至此，无复再言，惟愿历经山河，不坠青云之志，不丧君子旷达之容，不失为国为民之心！</p>			
+						</div>
+					</div>
+				</section>
+			</div>
+
+		<div class="content__inner">
+
+			<section class="top-section intro">
+				<div class="section__body">
+					<div class="intro__content">
+						<ul>
+							<li class="chuko"><p class="title">忠孝</p><p class="ruby">Zhong</p></li>
+							<li class="shisso"><p class="title">仁爱</p><p class="ruby">Ren</p></li>
+							<li class="jinai"><p class="title">家国</p><p class="ruby">Jia</p></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section class="top-section about easingWrap">
+				<div class="easingFade">
+					<div class="about__content">
+						<div class="top-section__ttl">
+							<h2 class="ttl"><span class="jp">迁徙路线</span><span class="en">Migration</span><span class="easingLine"><span class="line"></span></span></h2>
+						</div>
+						<div class="about__img">
+							<div class="item">
+								<div class="item__img easingImg easingParallax">
+									<div class="img-ov">
+										<img src="/static/picture/migration.png" width="2000" height="1056" alt="migration" class="pc">
+										<img src="/static/picture/migration.png" width="750" height="400" alt="migration" class="sp">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="about__txt top-section__bg">
+							<p class="txt">·公元1727年后，王姓支族始自云南宣威州迁至贵州大定府。宣威州即今宣威县，大定府即今毕节市及水城县等地。</p>
+							<p class="txt">·公元1827年后，该支族族分两支，一支迁至马摆，一支依旧居于原属地。马摆即今锅圈岩乡青峰村、马摆一带，原属地即今放珠镇哩东村一带。迁至马摆的支族又再分三房，长房居于官寨，二房居于后槽，三方迁居于大方县。</p>
+							<p class="txt">·公元1910年后，长房长支仍居于官寨，长房次支迁至董地乡田坝寨一带，长房三支迁至织金县。</p>
+							<span class="line top"></span>
+							<span class="line bottom"></span>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="top-section guide easingWrap">
+				<div class="easingFade">
+					<div class="guide__content">
+						<div class="top-section__ttl">
+							<h2 class="ttl"><span class="jp">世系图</span><span class="en">Descent</span><span class="easingLine"><span class="line"></span></span></h2>
+						</div>
+						<div class="guide__img">
+							<div class="item">
+								<div class="item__img easingImg easingParallax">
+									<div class="img-ov">
+										<img src="/static/picture/descent.png" width="2000" height="756" alt="descent" class="pc">
+										<img src="/static/picture/descent.png" width="2000" height="756" alt="descent" class="sp">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="guide__txt top-section__bg">
+							<p class="txt">·该世系图主要描述马摆长房世系，自我起上溯至六世祖李走则。世系图裁定日期：2020年4月14日晚。</p>
+							<span class="line top"></span>
+							<span class="line bottom"></span>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="top-section map easingWrap">
+				<div class="easingFade">
+					<div class="map__content">
+						<div class="top-section__ttl">
+							<h2 class="ttl"><span class="jp">墓葬图</span><span class="en">Grave</span><span class="easingLine"><span class="line"></span></span></h2>
+						</div>
+						<div class="map__img easingImg">
+							<img src="/static/picture/grave.png" width="1140" height="1626" alt="grave">
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<section class="section section__wedding program easingWrap">
+				<div class="section__body easingFade">
+					<div class="section__inner">
+						<h3 class="section__ttl">三书六礼</h3>
+						<div class="program__colum2 mod-colum2">
+							<ul>
+								<li class="item">
+									<h4 class="section__sttl">01.聘书</h4>
+									<p class="item__txt">订亲之文书</p>
+								</li>
+								<li class="item">
+									<h4 class="section__sttl">02.礼书</h4>
+									<p class="item__txt">列礼之文书</p>
+								</li>
+								<li class="item">
+									<h4 class="section__sttl">03.迎书</h4>
+									<p class="item__txt">迎娶之文书</p>
+								</li>
+								<li class="item">
+									<h4 class="section__sttl">01.纳彩</h4>
+									<p class="item__txt">请媒人提亲</p>
+								</li>
+								<li class="item">
+									<h4 class="section__sttl">02.问名</h4>
+									<p class="item__txt">等待后续补充......</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<section class="top-section access easingWrap">
+				<div class="easingFade">
+					<div class="access__content">
+						<div class="access__ttl"><h2 class="ttl">通信地址</h2><span class="easingLineY"><span class="line"></span></span></div>
+						<div class="access__map easingImg">
+							<img src="/static/picture/location.png" >
+						</div>
+						<div class="access__address">
+							<div class="address">所在地：贵州省毕节市纳雍县 553300</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div><!-- /#content -->
+
+	</div><!-- /.body-class -->
+</div><!-- /.barba-container -->
+</div><!-- /#barba-wrapper -->
+
+
+<footer id="footer" class="footer">
+	<div id="page-top">
+		<a href="#wrapper" class="ss">
+			<span class="scroll">
+				<span class="txt">PAGE TOP</span>
+				<span class="arw"></span>
+			</span>
+		</a>
+	</div>
+	<div class="footer__inner">
+		<div class="f-logo">莎拉李氏</div>
+		<p class="copyright">
+			© 2019 Sariay. <a href="/xadmin/" target="_blank" class="admin">Admin</a>
+		</p>
+	</div>
+</footer><!-- /#footer -->
+</div><!-- /#wrapper -->
+<!-- js -->
+<script defer="" src="/static/js/main.js"></script>
+<script>
+    console.log("%c 模板版权属于 %c", "background: #222222; color: #ffffff", " ", "https://www.nasu-nogijinja.jp/");
+</script>
+</body>
+</html>

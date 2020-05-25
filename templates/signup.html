@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8">
+<title>注册-莎拉李氏</title>
+    <link rel="shortcut icon" href="/static/image/favicon6.ico"/>
+<link rel="stylesheet" href="/static/css/login.css">
+    <style>
+        .input-init {
+            border-bottom: 1px solid grey;
+        }
+        .input-active {
+            border-bottom: 1px solid green;
+        }
+        .input-error {
+            border-bottom: 1px solid red;
+        }
+
+        .error-message{
+            color: red;
+            font-size: 12px;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        ul.errorlist{
+            display: block;
+            width: 100%;
+            text-align: center;
+            list-style: none;
+            color: red;
+            font-size: 12px;
+        }
+        .verify{
+            position: relative;
+        }
+
+        .verify img {
+            position: absolute;
+            height: 30px;
+            right: 2px;
+            bottom: 2px;
+        }
+
+
+    </style>
+</head>
+
+<body class="login-page">
+	<div class="content">
+        <form action="{% url 'login' %}?redirect_to={{ next }}" method="post" autocomplete="off">
+            <div class="form sign-in">
+                <h2>欢迎回来</h2>
+                <label>
+
+                    <input name="username" value="{{ login_form.username.value }}" class="{% if login_form.errors.username %}input-error{% endif %}" id="username" type="text" autocomplete="off" placeholder="用户名"/>
+                </label>
+                <label>
+
+                    <input name="password" value="{{ login_form.password.value }}" class="{% if login_form.errors.password %}input-error{% endif %}" id="password" type="password" autocomplete="new-password" placeholder="密码"/>
+                </label>
+                <p class="error-message">
+                    {% if login_form.errors %}
+                        {% for key, error in login_form.errors.items %}
+                            {{ error }}
+                        {% endfor %}
+                    {% else %}
+                        {{ msg }}
+                    {% endif %}
+                </p>
+                <button type="submit"  class="submit">登 录</button>
+            </div>
+            {% csrf_token %}
+        </form>
+
+		<div class="sub-cont">
+			<div class="img">
+				<div class="img__text m--up">
+					<h2>还未注册？</h2>
+					<p>立即注册，发现大量机会！</p>
+				</div>
+				<div class="img__text m--in">
+					<h2>已有帐号？</h2>
+					<p>有帐号就登录吧，好久不见了！</p>
+				</div>
+				<div class="img__btn">
+					<span class="m--up">注 册</span>
+					<span class="m--in">登 录</span>
+				</div>
+			</div>
+
+			<form action="{% url 'signup' %}" method="post" autocomplete="off">
+                <div class="form sign-up">
+                    <h2>立即注册</h2>
+                    <label>
+                        <input name="username" value="{{ signup_form.username.value }}" class="{% if signup_form.errors.username %}input-error{% endif %}" id="username" autocomplete="off" placeholder="用户名"/>
+                    </label>
+                    <label>
+                        <input name="email" value="{{ signup_form.email.value }}" class="{% if signup_form.errors.email %}input-error{% endif %}" id="email" autocomplete="off" placeholder="邮箱"/>
+                    </label>
+                    <label>
+                        <input name="password" value="{{ signup_form.password.value }}" class="{% if signup_form.errors.password %}input-error{% endif %}" id="password"  autocomplete='new-password' placeholder="密码"/>
+                    </label>
+                    <label>
+                        <input name="password_confirm" value="{{ signup_form.password_confirm.value }}" class="{% if signup_form.errors.password %}input-error{% endif %}" id="password_confirm"  autocomplete='new-password' placeholder="密码"/>
+                    </label>
+                    <label name="captcha"  class= "verify {% if signup_form.errors.captcha %}verity-error{% endif %}" id="verify">
+                        {{ verify_code_form.captcha }}
+                    </label>
+                    <p class="error-message">
+
+                        {% if signup_form.errors %}
+                            {% for key, error in signup_form.errors.items %}
+                                {{ error }}
+                            {% endfor %}
+                        {% endif %}
+                    </p>
+                    <button  type="submit"  class="submit">注 册</button>
+
+                </div>
+                 {% csrf_token %}
+			</form>
+		</div>
+	</div>
+    <script>
+        const PAGE_TYPE = "SIGNUP";
+    </script>
+    <script src="/static/js/jquey-3.3.1.min.js"></script>
+
+	<script src="/static/js/login.js"></script>
+</body>
+
+</html>
